@@ -20,6 +20,13 @@ db.once('open', () => {
     console.log(`Yas - MongoDB connection established succesfully!`);
 })
 
+// Routes
+const productsRouter = require('./src/routes/products');
+const usersRouter = require('./src/routes/users');
+
+app.use('/products', productsRouter)
+app.use('/users', usersRouter)
+
 
 app.listen(port, () => (console.log(`Server is running on port ${port}`)
 ))
